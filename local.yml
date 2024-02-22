@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+
+ pre_tasks:
+    - name: update repositories
+      apt:
+      update_cache: yes
+      changed_when: False
+
+  roles:
+    - apache2
+    - mariadb
